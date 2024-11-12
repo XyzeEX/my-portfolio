@@ -1,0 +1,945 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-padding-top: 60px;
+}
+
+body {
+    background-color: #333;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.logo {
+    padding: 0px 20px;
+}
+
+.logo h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.white {
+    color: #fff;
+}
+
+.blue {
+    color: #1e90ff; /* Blue color */
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.dropdown-toggle {
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    display: none; /* Hidden by default on large screens */
+    margin-right: 20px;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li a {
+    font-size: clamp(4px, 2vw, 16px);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    background-color: #333;
+    color: #1e90ff;
+}
+
+.nav-links i {
+    margin-right: 8px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+}
+
+nav ul li {
+    margin: 0 0px;
+}
+
+nav ul li a {
+    font-size: clamp(4px, 2vw, 16px);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Align icon and text */
+    gap: 5px; /* Space between icon and text */
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Black text on hover */
+}
+
+nav ul li a i {
+    font-size: 1.2em; /* Adjust icon size */
+}
+
+.nav-links li a .nav-text {
+    display: block; /* Ensures text is block-level, allowing line breaks */
+    line-height: 1.2; /* Adjusts spacing between lines */
+    font-size: 12px; /* Smaller text size */
+    text-align: center; /* Center align the text */
+    word-break: break-word; /* Ensures long words are broken properly */
+}
+
+.download-cv {
+    position: relative; /* Change to relative for better responsiveness */
+    top: auto;
+    right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.download-cv .btn {
+    background-color: #136cc5;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-cv .btn:hover {
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+main {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid #444;
+}
+
+h1 {
+    color: #000;
+}
+
+h2 {
+    color: #fff;
+    font-size: clamp(16px, 2.8vw, 20px);
+    padding-bottom: 10px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-size: clamp(8px, 2vw, 16px);
+}
+
+#home {
+    border-bottom: none;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.home {
+    color: #000;
+    text-align: left;
+    margin: 0;
+}
+
+/* Home Container */
+.home-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+
+/* Background Image */
+.home-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(1.8) saturate(0.2) contrast(0.8); /* Softer filter */
+    z-index: 0;
+    pointer-events: none; /* Ensure content is clickable */
+}
+
+/* Profile Image */
+.home-profile {
+    height: auto;
+    width: 200px;
+    max-width: 100%;
+    z-index: 1;
+    object-fit: cover;
+}
+
+/* Home Text Section */
+.home-text {
+    max-width: 1000px;
+    padding: 0px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Heading and Subheading */
+.home-text h1 {
+    font-size: clamp(15px, 3vw, 32px);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.home-text h3 {
+    font-size: clamp(14px, 2.2vw, 20px);
+    margin-bottom: 15px;
+    color: #136cc5;
+}
+
+.typing-wrapper {
+    margin-bottom: 15px;
+}
+
+/* Typing Animation */
+.typing-animation {
+    color: #136cc5;
+    border-right: 2px solid rgba(19, 108, 197, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    font-size: clamp(12px, 2vw, 20px);
+    animation: typing 6s steps(30, end) infinite, blink-caret 0.8s step-end infinite;
+    /* Adjust the width based on character count */
+    width: fit-content; /* Ensure it fits the content */
+    max-width: 30ch; /* Optional: cap the max-width */
+}
+
+/* Typing and Deleting effect */
+@keyframes typing {
+    0% { width: 0; }
+    40% { width: 27ch; } /* Adjust '30ch' based on your text length */
+    60% { width: 27ch; }
+    80% { width: 0; }
+    100% { width: 0; }
+}
+
+/* Blinking Cursor */
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
+/* Introduction Paragraphs */
+.home-idn p,
+.home-eng p {
+    font-size: clamp(10px, 1.8vw, 16px);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.home-eng p {
+    font-style: italic;
+}
+
+/* Contact Section */
+.contact-me {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-list li i {
+    font-size: 1.2rem;
+    color: #1e90ff;
+}
+
+.contact-list li a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+    font-size: clamp(10px, 1.5vw, 14px);
+}
+
+.contact-list a:hover {
+    color: #136cc5;
+    text-decoration: underline;
+}
+
+#personal-info {
+    padding: 20px 15px;
+    color: #fff;
+}
+
+#personal-info h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#personal-info h2 i {
+    padding-right: 5px;
+}
+
+/* Personal Info Container */
+.personal-info-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Profile Image Styling */
+.profile-image {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.profile-image img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Personal Info Styling */
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #3a3a3a;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Align labels, colons, and values */
+.info-item p,
+.address-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 0;
+    flex-wrap: wrap; /* Allow text to wrap on smaller screens */
+}
+
+.label {
+    font-weight: bold;
+    color: #1e90ff;
+    min-width: 150px;
+}
+
+.colon {
+    flex-shrink: 0;
+    text-align: center;
+    width: 10px;
+    color: #fff;
+}
+
+.value {
+    color: #fff;
+    flex: 1;
+}
+
+/* Address List Styling */
+.address-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.address-list li {
+    color: #fff;
+    font-size: 1rem;
+}
+
+#education {
+    padding: 20px 15px;
+    color: #fff;
+}
+
+#education h2 {
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#education h2 i {
+    padding-right: 10px;
+}
+
+/* Timeline Container */
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    padding-left: 40px; /* Space for the line and dot */
+}
+
+/* Timeline Vertical Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    bottom: 20px;
+    left: 13px;
+    width: 2px;
+    background-color: #1e90ff; /* Line color */
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: #3a3a3a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    max-width: 100%;
+    position: relative;
+}
+
+/* Dot for Each Timeline Item */
+.timeline-item::before {
+    content: '⦿';
+    font-size: 1.2rem;
+    color: #1e90ff; /* Dot color */
+    position: absolute;
+    left: -35px;
+    top: 0px; /* Adjust as needed to align with content */
+}
+
+/* Timeline Content */
+.timeline-content {
+    flex-grow: 1;
+}
+
+.year {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+    margin-right: 0;
+    font-size: 1rem;
+    color: #1e90ff;
+}
+
+.timeline-content p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+/* Grade on the Right */
+.grade {
+    font-size: 1rem;
+    color: #000;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 110px;
+    text-align: center;
+    align-self: center;
+    flex-shrink: 0; /* Prevents shrinking of the grade container */
+}
+
+#skill {
+    padding: 20px 15px;
+    color: #fff;
+}
+
+#skill h2 {
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#skill h2 i {
+    padding-right: 10px;
+}
+
+/* skill Container */
+.skill-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* skill Group */
+.skill-group {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skill-group h3 {
+    font-size: clamp(0.7rem, 2.2vw, 1rem);
+    color: #fff;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Skill Item */
+.skill {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+/* Skill Name */
+.skill-name {
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    color: #b0b0b0;
+    margin-bottom: 0px;
+}
+
+/* Skill Wrapper */
+.skill-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Skill Bar */
+.skill-bar {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+    flex-grow: 1;
+    position: relative;
+}
+
+/* Skill Level (Slider) */
+.skill-level {
+    background-color: #1e90ff;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Skill Score */
+.skill-score {
+    font-size: 0.9rem;
+    color: #fff;
+    min-width: 30px;
+    text-align: right;
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+}
+
+#experience {
+    padding: 20px 15px;
+    color: #fff;
+}
+
+#experience h2 {
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#experience h2 i {
+    padding-right: 10px;
+}
+
+#portfolio {
+    padding: 20px 15px;
+    color: #fff;
+}
+
+#portfolio h2 {
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#portfolio h2 i {
+    padding-right: 10px;
+}
+
+.portfolio-category {
+    margin-bottom: 40px;
+}
+
+.portfolio-category h3 {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portfolio-item {
+    background-color: #3a3a3a;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.portfolio-item p {
+    font-size: clamp(0.6rem, 1.8vw, 0.9rem);
+    color: #b0b0b0;
+}
+
+.portfolio-item a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.portfolio-item a:hover {
+    color: #fff;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 20px;
+    background-color: #333;
+    color: #f5f5f5;
+    border-top: 1px solid #444;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .nav-links {
+        gap: 25px;
+    }
+    
+    .nav-links i {
+        margin-right: 0px;
+    }    
+
+    /* Hide text in nav links when the width is 1200px or smaller */
+    .nav-links li a .nav-text {
+        display: none; /* Hide the text */
+    }
+
+    .nav-links li a .nav-text1 {
+        display: none; /* Hide the text */
+    }
+
+    /* Optional: Adjust icon size for better visibility */
+    .nav-links li a i {
+        font-size: 1.5rem; /* Increase icon size if needed */
+    }
+}
+
+@media (max-width: 800px) {
+    main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Ensure the header is column-oriented and aligned properly */
+    .fixed-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+    }
+
+    /* Style the dropdown toggle */
+    .dropdown-toggle {
+        display: flex; /* Change to flex for better alignment */
+        align-items: left;
+        justify-content: center;
+        cursor: pointer;
+        margin-right: auto; /* Align to the left */
+        font-size: 2rem;
+    }
+
+    /* Ensure logo is centered */
+    .logo {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    .logo h2 {
+        font-size: clamp(14px, 5vw, 24px);
+        margin-top: 10px;
+    }
+
+    /* Download CV button to the right */
+    .download-cv {
+        position: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .download-cv .btn {
+        padding: 6px 10px;
+    }
+
+    /* Hide nav links by default on small screens */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        background-color: #222;
+        overflow-y: auto;
+        width: 100%;
+        max-height: 80vh;
+        flex-direction: column;
+        gap: clamp(10px, 5vw, 20px);
+        padding: 20px;
+        transition: transform 0.4s ease-out;
+        transform: translateY(-100%);
+        z-index: 999; /* Make sure it shows above other content */
+    }
+
+    /* Show nav links when the dropdown toggle is activated */
+    .nav-links.show {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    /* Style for nav link text */
+    .nav-links li a .nav-text,
+    .nav-links li a .nav-text1 {
+        display: flex;
+        text-align: left;
+        font-size: clamp(12px, 3vw, 16px);
+    }
+
+    /* Adjust nav-container for better layout */
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-profile {
+        width: 150px;
+        height: auto;
+        margin-bottom: 0px;
+        margin-top: 20px;
+    }
+
+    .home-text {
+        max-width: 100%;
+    }
+
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0px;
+        padding-bottom: 20px;
+    }
+
+    #personal-info {
+        padding: 20px 0px;
+    }    
+
+    .personal-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: #3a3a3a;
+        border-radius: 20px;
+        padding: 10px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .label {
+        font-size: clamp(0.6rem, 2.2vw, 0.9rem);
+        min-width: 30%;
+    }
+
+    .value {
+        font-size: clamp(0.6rem, 2.2vw, 0.9rem);
+    }
+
+    .colon {
+        font-size: clamp(0.6rem, 2.2vw, 0.9rem);
+        flex-shrink: 0;
+        text-align: center;
+        width: 0px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: center; /* Center the content on smaller screens */
+    }
+
+    /* Adjust the year and content for mobile */
+    .timeline-content {
+        text-align: center;
+    }
+
+    /* Adjust the vertical line for mobile */
+    .timeline::before {
+        left: 0;
+        width: 1px; /* Thinner line for mobile */
+    }
+
+    /* Adjust dot position for mobile */
+    .timeline-item::before {
+        left: -49px; /* Bring the dot closer */
+    }
+
+    /* Decrease padding for timeline items on mobile */
+    .timeline-item {
+        padding-top: 10px;
+        gap: 15px;
+    }
+
+    /* Adjust font sizes */
+    .timeline-content h3 {
+        font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+    }
+
+    .timeline-content p {
+        font-size: clamp(0.7rem, 1.8vw, 1rem);
+    }
+
+    .year {
+        font-size: clamp(0.6rem, 1.7vw, 1rem);
+    }
+
+    .grade {
+        font-size: clamp(0.7rem, 1.8vw, 1rem);
+        width: auto; /* Let the grade container adjust based on content */
+        margin-top: 0px;
+    }
+
+    #education {
+        padding: 20px 0px;
+    }
+
+    #experience {
+        padding: 20px 0px;
+    }
+}
