@@ -4,17 +4,14 @@ const app = express();
 const port = 3000;  // You can change the port if you want
 
 // Serve HTML files from the 'src/public' folder
-app.use(express.static(path.join(__dirname, 'src', 'public')));
-
-// Serve CSS files from the 'src/style' folder
-app.use('/style', express.static(path.join(__dirname, 'src', 'style')));
+app.use(express.static(path.join(__dirname)));
 
 // Serve assets from the 'src/assets' folder
-app.use('/assets', express.static(path.join(__dirname, 'src', 'assets')));
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Route for the home page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
