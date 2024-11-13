@@ -257,7 +257,6 @@
             </div>
         </section>
 
-
         <section id="skill">
             <h2><i class='bx bx-desktop'></i> Skill</h2>
 
@@ -481,7 +480,8 @@
             <div class="portfolio-category">
                 <h3><i class='bx bx-book'></i> Research</h3>
                 <div class="portfolio-items">
-                    <a href="http://ejurnal.setiabudi.ac.id/ojs/index.php/farmasi-indonesia/article/view/1532" target="_blank" class="portfolio-item">
+                    <a href="http://ejurnal.setiabudi.ac.id/ojs/index.php/farmasi-indonesia/article/view/1532"
+                        target="_blank" class="portfolio-item">
                         <img src="assets/research-1.png" alt="Research 1">
                         <p>Jurnal Farmasi Indonesia, Vol. 20, No.1. "The Knowledge and Behavior of East Java's Middle
                             and High School Students towards 6M Health Protocols."</p>
@@ -692,32 +692,32 @@
         sectionsToAnimate.forEach(section => observer.observe(section));
     });
 
-    document.getElementById('downloadBtn').addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('cvModal').style.display = 'flex'; // Show modal
-  });
+    document.getElementById('downloadBtn').addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('cvModal').style.display = 'flex'; // Show modal
+    });
 
-  // Trigger download for English CV
-  document.getElementById('englishBtn').addEventListener('click', function() {
-    var link = document.createElement('a');
-    link.href = 'assets/ATS CV - Dika Herian Saputra (ENG).pdf'; // Path to your English CV file
-    link.download = 'ATS CV - Dika Herian Saputra (ENG).pdf'; // The name of the file to be saved
-    link.click(); // Trigger the download
-    document.getElementById('cvModal').style.display = 'none'; // Hide modal
-  });
+    // Trigger download for English CV
+    document.getElementById('englishBtn').addEventListener('click', function () {
+        var link = document.createElement('a');
+        link.href = 'assets/ATS CV - Dika Herian Saputra (ENG).pdf'; // Path to your English CV file
+        link.download = 'ATS CV - Dika Herian Saputra (ENG).pdf'; // The name of the file to be saved
+        link.click(); // Trigger the download
+        document.getElementById('cvModal').style.display = 'none'; // Hide modal
+    });
 
-  // Trigger download for Indonesian CV
-  document.getElementById('indonesianBtn').addEventListener('click', function() {
-    var link = document.createElement('a');
-    link.href = 'assets/ATS CV - Dika Herian Saputra (IDN).pdf'; // Path to your Indonesian CV file
-    link.download = 'ATS CV - Dika Herian Saputra (IDN).pdf'; // The name of the file to be saved
-    link.click(); // Trigger the download
-    document.getElementById('cvModal').style.display = 'none'; // Hide modal
-  });
+    // Trigger download for Indonesian CV
+    document.getElementById('indonesianBtn').addEventListener('click', function () {
+        var link = document.createElement('a');
+        link.href = 'assets/ATS CV - Dika Herian Saputra (IDN).pdf'; // Path to your Indonesian CV file
+        link.download = 'ATS CV - Dika Herian Saputra (IDN).pdf'; // The name of the file to be saved
+        link.click(); // Trigger the download
+        document.getElementById('cvModal').style.display = 'none'; // Hide modal
+    });
 
-  // Close the modal
-  document.getElementById('closeBtn').addEventListener('click', function() {
-    document.getElementById('cvModal').style.display = 'none'; // Hide modal
-  });
+    // Close the modal
+    document.getElementById('closeBtn').addEventListener('click', function () {
+        document.getElementById('cvModal').style.display = 'none'; // Hide modal
+    });
 
 </script>
