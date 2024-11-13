@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html {
@@ -46,7 +46,8 @@ body {
 }
 
 .blue {
-    color: #1e90ff; /* Blue color */
+    color: #1e90ff;
+    /* Blue color */
 }
 
 .logo a {
@@ -57,7 +58,8 @@ body {
     font-size: 2rem;
     color: #fff;
     cursor: pointer;
-    display: none; /* Hidden by default on large screens */
+    display: none;
+    /* Hidden by default on large screens */
     margin-right: 20px;
 }
 
@@ -113,32 +115,43 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     display: flex;
-    align-items: center; /* Align icon and text */
-    gap: 5px; /* Space between icon and text */
+    align-items: center;
+    /* Align icon and text */
+    gap: 5px;
+    /* Space between icon and text */
     padding: 5px 10px;
     transition: all 0.3s ease;
     border-radius: 4px;
 }
 
 nav ul li a:hover {
-    background-color: #fff; /* White background on hover */
-    color: #000; /* Black text on hover */
+    background-color: #fff;
+    /* White background on hover */
+    color: #000;
+    /* Black text on hover */
 }
 
 nav ul li a i {
-    font-size: 1.2em; /* Adjust icon size */
+    font-size: 1.2em;
+    /* Adjust icon size */
 }
 
 .nav-links li a .nav-text {
-    display: block; /* Ensures text is block-level, allowing line breaks */
-    line-height: 1.2; /* Adjusts spacing between lines */
-    font-size: 12px; /* Smaller text size */
-    text-align: center; /* Center align the text */
-    word-break: break-word; /* Ensures long words are broken properly */
+    display: block;
+    /* Ensures text is block-level, allowing line breaks */
+    line-height: 1.2;
+    /* Adjusts spacing between lines */
+    font-size: 12px;
+    /* Smaller text size */
+    text-align: center;
+    /* Center align the text */
+    word-break: break-word;
+    /* Ensures long words are broken properly */
 }
 
 .download-cv {
-    position: relative; /* Change to relative for better responsiveness */
+    position: relative;
+    /* Change to relative for better responsiveness */
     top: auto;
     right: auto;
     margin-left: auto;
@@ -161,6 +174,101 @@ nav ul li a i {
     background-color: #1e90ff;
     color: #fff;
 }
+
+/* Modal background */
+.cv-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Darker background for better contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Modal content styling */
+.modal-content {
+    background: #333;
+    /* Cool gradient background */
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Soft shadow effect */
+    width: 320px;
+    color: #fff;
+    animation: modalAnim 0.3s ease-out;
+    /* Add animation for modal appearance */
+}
+
+/* Header Styling */
+.modal-content h2 {
+    font-size: clamp(1em, 3vw, 1.4rem);
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Text shadow for better contrast */
+}
+
+/* Button styling */
+.modal-content button {
+    background: #f5f5f5;
+    color: #333;
+    border: 2px solid #333;
+    padding: 12px 25px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.modal-content button:hover {
+    background: #b3b3b3;
+    color: #000000;
+}
+
+.modal-content button:active {
+    transform: scale(0.98);
+}
+
+/* Close button style */
+#closeBtn {
+    background: #dd3030;
+    color: white;
+    border: none;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+#closeBtn:hover {
+    background: #bd0c0c;
+}
+
+/* Animation for modal */
+@keyframes modalAnim {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 
 main {
     padding-left: 40px;
@@ -212,14 +320,13 @@ ul li {
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    padding-bottom: 0px;
 }
 
 /* Background Image */
 .home-container::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -20px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -227,9 +334,11 @@ ul li {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(1.8) saturate(0.2) contrast(0.8); /* Softer filter */
+    filter: brightness(1.8) saturate(0.2) contrast(0.8);
+    /* Softer filter */
     z-index: 0;
-    pointer-events: none; /* Ensure content is clickable */
+    pointer-events: none;
+    /* Ensure content is clickable */
 }
 
 /* Profile Image */
@@ -251,7 +360,7 @@ ul li {
 
 /* Heading and Subheading */
 .home-text h1 {
-    font-size: clamp(15px, 3vw, 32px);
+    font-size: clamp(16px, 3vw, 32px);
     margin-bottom: 10px;
     line-height: 1.2;
 }
@@ -276,22 +385,41 @@ ul li {
     font-size: clamp(12px, 2vw, 20px);
     animation: typing 6s steps(30, end) infinite, blink-caret 0.8s step-end infinite;
     /* Adjust the width based on character count */
-    width: fit-content; /* Ensure it fits the content */
-    max-width: 30ch; /* Optional: cap the max-width */
+    width: fit-content;
+    /* Ensure it fits the content */
+    max-width: 30ch;
+    /* Optional: cap the max-width */
 }
 
 /* Typing and Deleting effect */
 @keyframes typing {
-    0% { width: 0; }
-    40% { width: 27ch; } /* Adjust '30ch' based on your text length */
-    60% { width: 27ch; }
-    80% { width: 0; }
-    100% { width: 0; }
+    0% {
+        width: 0;
+    }
+
+    40% {
+        width: 27ch;
+    }
+
+    /* Adjust '30ch' based on your text length */
+    60% {
+        width: 27ch;
+    }
+
+    80% {
+        width: 0;
+    }
+
+    100% {
+        width: 0;
+    }
 }
 
 /* Blinking Cursor */
 @keyframes blink-caret {
-    50% { border-color: transparent; }
+    50% {
+        border-color: transparent;
+    }
 }
 
 /* Introduction Paragraphs */
@@ -366,7 +494,8 @@ ul li {
     gap: 40px;
     max-width: 900px;
     margin: 0 auto;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
 }
 
 /* Profile Image Styling */
@@ -402,7 +531,8 @@ ul li {
     align-items: center;
     gap: 10px;
     padding: 0px 0;
-    flex-wrap: wrap; /* Allow text to wrap on smaller screens */
+    flex-wrap: wrap;
+    /* Allow text to wrap on smaller screens */
 }
 
 .label {
@@ -441,7 +571,7 @@ ul li {
 }
 
 #education h2 {
-    color: #fff; 
+    color: #fff;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -459,7 +589,8 @@ ul li {
     flex-direction: column;
     gap: 30px;
     position: relative;
-    padding-left: 40px; /* Space for the line and dot */
+    padding-left: 40px;
+    /* Space for the line and dot */
 }
 
 /* Timeline Vertical Line */
@@ -470,7 +601,8 @@ ul li {
     bottom: 20px;
     left: 13px;
     width: 2px;
-    background-color: #1e90ff; /* Line color */
+    background-color: #1e90ff;
+    /* Line color */
 }
 
 /* Timeline Item */
@@ -490,10 +622,12 @@ ul li {
 .timeline-item::before {
     content: '⦿';
     font-size: 1.2rem;
-    color: #1e90ff; /* Dot color */
+    color: #1e90ff;
+    /* Dot color */
     position: absolute;
     left: -35px;
-    top: 0px; /* Adjust as needed to align with content */
+    top: 0px;
+    /* Adjust as needed to align with content */
 }
 
 /* Timeline Content */
@@ -529,7 +663,8 @@ ul li {
     width: 110px;
     text-align: center;
     align-self: center;
-    flex-shrink: 0; /* Prevents shrinking of the grade container */
+    flex-shrink: 0;
+    /* Prevents shrinking of the grade container */
 }
 
 #skill {
@@ -538,7 +673,7 @@ ul li {
 }
 
 #skill h2 {
-    color: #fff; 
+    color: #fff;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -626,7 +761,7 @@ ul li {
 }
 
 #experience h2 {
-    color: #fff; 
+    color: #fff;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -641,7 +776,7 @@ ul li {
 }
 
 #portfolio h2 {
-    color: #fff; 
+    color: #fff;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -725,23 +860,26 @@ footer {
     .nav-links {
         gap: 25px;
     }
-    
+
     .nav-links i {
         margin-right: 0px;
-    }    
+    }
 
     /* Hide text in nav links when the width is 1200px or smaller */
     .nav-links li a .nav-text {
-        display: none; /* Hide the text */
+        display: none;
+        /* Hide the text */
     }
 
     .nav-links li a .nav-text1 {
-        display: none; /* Hide the text */
+        display: none;
+        /* Hide the text */
     }
 
     /* Optional: Adjust icon size for better visibility */
     .nav-links li a i {
-        font-size: 1.5rem; /* Increase icon size if needed */
+        font-size: 1.5rem;
+        /* Increase icon size if needed */
     }
 }
 
@@ -761,11 +899,13 @@ footer {
 
     /* Style the dropdown toggle */
     .dropdown-toggle {
-        display: flex; /* Change to flex for better alignment */
+        display: flex;
+        /* Change to flex for better alignment */
         align-items: left;
         justify-content: center;
         cursor: pointer;
-        margin-right: auto; /* Align to the left */
+        margin-right: auto;
+        /* Align to the left */
         font-size: 2rem;
     }
 
@@ -797,7 +937,8 @@ footer {
     .nav-links {
         display: none;
         position: absolute;
-        top: 60px; /* Adjust based on header height */
+        top: 60px;
+        /* Adjust based on header height */
         left: 0;
         background-color: #222;
         overflow-y: auto;
@@ -808,7 +949,8 @@ footer {
         padding: 20px;
         transition: transform 0.4s ease-out;
         transform: translateY(-100%);
-        z-index: 999; /* Make sure it shows above other content */
+        z-index: 999;
+        /* Make sure it shows above other content */
     }
 
     /* Show nav links when the dropdown toggle is activated */
@@ -860,7 +1002,7 @@ footer {
 
     #personal-info {
         padding: 20px 0px;
-    }    
+    }
 
     .personal-info {
         display: flex;
@@ -891,7 +1033,8 @@ footer {
 
     .timeline-item {
         flex-direction: column;
-        align-items: center; /* Center the content on smaller screens */
+        align-items: center;
+        /* Center the content on smaller screens */
     }
 
     /* Adjust the year and content for mobile */
@@ -902,12 +1045,14 @@ footer {
     /* Adjust the vertical line for mobile */
     .timeline::before {
         left: 0;
-        width: 1px; /* Thinner line for mobile */
+        width: 1px;
+        /* Thinner line for mobile */
     }
 
     /* Adjust dot position for mobile */
     .timeline-item::before {
-        left: -49px; /* Bring the dot closer */
+        left: -49px;
+        /* Bring the dot closer */
     }
 
     /* Decrease padding for timeline items on mobile */
@@ -931,7 +1076,8 @@ footer {
 
     .grade {
         font-size: clamp(0.7rem, 1.8vw, 1rem);
-        width: auto; /* Let the grade container adjust based on content */
+        width: auto;
+        /* Let the grade container adjust based on content */
         margin-top: 0px;
     }
 
@@ -942,4 +1088,199 @@ footer {
     #experience {
         padding: 20px 0px;
     }
+}
+
+/* Initial hidden state for animation */
+.home-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* Animation when in viewport */
+.home-container.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation for individual elements */
+.home-profile,
+.home-text h1,
+.typing-wrapper,
+.home-idn,
+.home-eng,
+.contact-me {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Visible state */
+.home-container.animate .home-profile,
+.home-container.animate .home-text h1,
+.home-container.animate .typing-wrapper,
+.home-container.animate .home-idn,
+.home-container.animate .home-eng,
+.home-container.animate .contact-me {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay effect for staggered animation */
+.home-profile {
+    transition-delay: 0.1s;
+}
+
+.home-text h1 {
+    transition-delay: 0.2s;
+}
+
+.typing-wrapper {
+    transition-delay: 0.3s;
+}
+
+.home-idn {
+    transition-delay: 0.4s;
+}
+
+.home-eng {
+    transition-delay: 0.5s;
+}
+
+.contact-me {
+    transition-delay: 0.6s;
+}
+
+/* Initial hidden state for the personal-info section */
+.personal-info-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* Animation when in viewport */
+.personal-info-container.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Initial hidden state for the heading and the content */
+#personal-info h2,
+.personal-info-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+/* Animation for when they enter the viewport */
+#personal-info.animate h2,
+#personal-info.animate .personal-info-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation for individual items */
+.profile-image,
+.personal-info .info-item,
+.personal-info .address-list li {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* Visible state */
+.personal-info-container.animate .profile-image,
+.personal-info-container.animate .personal-info .info-item,
+.personal-info-container.animate .personal-info .address-list li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay effect for staggered animation */
+.profile-image {
+    transition-delay: 0.1s;
+}
+
+.personal-info .info-item:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.personal-info .info-item:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.personal-info .info-item:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.personal-info .info-item:nth-child(4) {
+    transition-delay: 0.5s;
+}
+
+.personal-info .info-item:nth-child(5) {
+    transition-delay: 0.6s;
+}
+
+.personal-info .address-list li:nth-child(1) {
+    transition-delay: 0.7s;
+}
+
+.personal-info .address-list li:nth-child(2) {
+    transition-delay: 0.8s;
+}
+
+.personal-info .address-list li:nth-child(3) {
+    transition-delay: 0.9s;
+}
+
+.personal-info .address-list li:nth-child(4) {
+    transition-delay: 1s;
+}
+
+/* Initial state for timeline items (hidden and translated down) */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+/* When .animate class is added, the items will fade in and slide up */
+#education.animate .timeline-item,
+#experience.animate .timeline-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Initial hidden state for entire section */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+/* Animate section into view */
+section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Initial hidden state for headings and lines */
+section h2 {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s ease-out;
+}
+
+/* Initial hidden state for timeline items */
+.timeline-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+/* Animate headings, lines, and timeline items sequentially */
+section.animate h2,
+section.animate .timeline-item {
+    opacity: 1;
+    transform: translateY(0);
 }
